@@ -1,0 +1,24 @@
+.infoBox {
+
+    width: 100%;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    align-items: center;
+}
+
+.infoCard {
+    width: 100%;
+    margin: 0 2rem;
+}
+
+.infoCard hr {
+    border-color: linear-gradient(to bottom right, #D24074 0%, #6518B4 50%) bottom right / 50% 50% no-repeat,
+    linear-gradient(to bottom left, #D24074 0%, #6518B4 50%) bottom left / 50% 50% no-repeat,
+    linear-gradient(to top left, #D24074 0%, #6518B4 50%) top left / 50% 50% no-repeat,
+    linear-gradient(to top right, #D24074 0%, #6518B4 50%) top right / 50% 50% no-repeat;
+
+
+
+}
