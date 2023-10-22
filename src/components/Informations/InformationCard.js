@@ -5,9 +5,9 @@ export default function InformationCard({ icons, result, title }) {
         <>
             {icons}
             < div className={styles.infoCard} >
-                <p>
+                <h4>
                     {title}
-                </p>
+                </h4>
                 <p>
                     {result}
                 </p>

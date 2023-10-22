@@ -1,27 +1,25 @@
 .searchBox {
 
-    background-color: #161B22;
     display: flex;
     position: relative;
-    padding: 25px 65px;
+    margin: 2rem 0;
+    padding: 20px 45px;
     width: 100%;
     border-radius: 15px;
     align-items: center;
+    background-color: #161B22;
 }
 
 .searchTerm {
-    
+
     width: 100%;
-    border-radius: 7px;
     border: 3px solid #873EFF;
+    border-radius: 7px;
     border-right: none;
     outline: none;
-    background-color: #0D1117;
     padding: 15px 35px;
     font-size: 20px;
-}
-
-.searchTerm:focus {
+    background-color: #0D1117;
     color: #989898;
 }
 
@@ -34,6 +32,7 @@
 
 .searchButton {
 
+    position: relative;
     background-color: #873EFF;
     border: 3px solid #873EFF;
     border-radius: 7px;
@@ -43,5 +42,4 @@
     font-size: 20px;
     padding: 15px 46px;
     right: 10px;
-    position: relative;
 }

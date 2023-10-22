@@ -9,16 +9,24 @@
 }
 
 .infoCard {
+
     width: 100%;
     margin: 0 2rem;
 }
 
+.infoCard h4 {
+
+    font-weight: 300;
+}
+
+.infoCard p {
+
+    font-weight: 100;
+}
+
 .infoCard hr {
-    border-color: linear-gradient(to bottom right, #D24074 0%, #6518B4 50%) bottom right / 50% 50% no-repeat,
-    linear-gradient(to bottom left, #D24074 0%, #6518B4 50%) bottom left / 50% 50% no-repeat,
-    linear-gradient(to top left, #D24074 0%, #6518B4 50%) top left / 50% 50% no-repeat,
-    linear-gradient(to top right, #D24074 0%, #6518B4 50%) top right / 50% 50% no-repeat;
 
-
-
+    border: 0;
+    height: 1px;
+    background: radial-gradient(50% 50% at 50% 50%, #D24074 0%, #6518B4 100%);
 }
