@@ -11,24 +11,24 @@ const LayoutSearch = () => {
   const [cepData, setCepData] = useState(null);
   const [notFound, setNotFound] = useState(false);
   const [showLogo, setShowLogo] = useState(true);
-  const navigate = useNavigate(); // Use useNavigate ao invés de useHistory
+  const navigate = useNavigate(); 
 
   const handleCepData = (data) => {
     if (data.erro) {
       setNotFound(true);
       setShowLogo(false);
-      navigate("/notfound"); // Redireciona para a página de erro
+      navigate("/notfound"); 
     } else {
       setCepData(data);
       setNotFound(false);
       setShowLogo(false);
-      navigate("/search"); // Redireciona para a página de informações
+      navigate("/search"); 
     }
   }
 
   return (
     <div>
-      <Link to="/"> {/* Use o Link para voltar à página inicial */}
+      <Link to="/"> 
         <HeaderCep />
       </Link>
       <SearchCep onCepData={handleCepData} />
