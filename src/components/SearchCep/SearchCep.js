@@ -3,11 +3,12 @@ import styles from '../../styles/App.module.css';
 import style from './SearchCep.module.css';
 import React, { useState } from 'react';
 import axios from "axios";
-import Informations from "../Informations/Informations.js";
+import { useNavigate } from "react-router-dom"; 
 
-export default function SearchCep(props) {
+export default function SearchCep() {
     const [cep, setCep] = useState('');
-
+    const navigate = useNavigate(); 
+    
     const handleCepChange = (e) => {
         let inputValue = e.target.value;
         inputValue = inputValue.replace(/[^\d]/g, '');
@@ -17,18 +18,21 @@ export default function SearchCep(props) {
 
     const fetchCepInfo = async () => {
         try {
-            const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
-            const responseData = response.data;
-            props.onCepData(responseData);
-        } catch (error) {
-            console.error('Erro ao encontrar o CEP: ', error);
-        }
-    };
+          const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+          const responseData = response.data;
 
-    const handleSubmit = (e) => {
+          navigate('/result', { state: { props: responseData } });
+          console.log(responseData)
+        } catch (error) {
+          console.error('Erro ao encontrar o CEP: ', error);
+          
+        }
+      };
+    
+      const handleSubmit = (e) => {
         e.preventDefault();
         fetchCepInfo();
-    };
+      };
 
     return (
         <main className={styles.container}>
