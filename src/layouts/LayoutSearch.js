@@ -1,43 +1,43 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; // Importe useNavigate
+import FooterCep from "../components/FooterCep/FooterCep";
 import HeaderCep from "../components/HeaderCep/HeaderCep";
 import SearchCep from "../components/SearchCep/SearchCep";
 import LogoCep from "../components/LogoCep/LogoCep";
 import Informations from "../components/Informations/Informations";
 import NotFound from "../components/NotFound/NotFound";
-import FooterCep from "../components/FooterCep/FooterCep";
 
-const LayoutSearch = () => {
-  const [cepData, setCepData] = useState(null);
-  const [notFound, setNotFound] = useState(false);
-  const [showLogo, setShowLogo] = useState(true);
-  const navigate = useNavigate(); 
+export default function LayoutSearch() {
+    const [cepData, setCepData] = useState(null);
+    const [notFound, setNotFound] = useState(false);
+    const [showLogo, setShowLogo] = useState(true);
+    const [showInformations, setShowInformations] = useState(false); 
 
-  const handleCepData = (data) => {
-    if (data.erro) {
-      setNotFound(true);
-      setShowLogo(false);
-      navigate("/notfound"); 
-    } else {
-      setCepData(data);
-      setNotFound(false);
-      setShowLogo(false);
-      navigate("/search"); 
+    const handleCepData = (data) => {
+        if (data.erro) {
+            setNotFound(true);
+            setShowLogo(false);
+            setShowInformations(false); 
+        } else {
+            setCepData(data);
+            setNotFound(false);
+            setShowLogo(false);
+            setShowInformations(true); 
+        }
     }
-  }
 
-  return (
-    <div>
-      <Link to="/"> 
-        <HeaderCep />
-      </Link>
-      <SearchCep onCepData={handleCepData} />
-      {showLogo ? <LogoCep /> : null}
-      {cepData && !notFound ? <Informations {...cepData} /> : null}
-      {notFound ? <NotFound /> : null}
-      <FooterCep />
-    </div>
-  );
-};
+    const handleHeaderClick = () => {
+        setShowLogo(true);
+        setShowInformations(false);
+    }
 
-export default LayoutSearch;
+    return (
+        <div>
+            <HeaderCep onClick={handleHeaderClick} />
+            <SearchCep onCepData={handleCepData} />
+            {showLogo ? <LogoCep /> : null}
+            {showInformations && !notFound ? <Informations {...cepData} /> : null}
+            {notFound ? <NotFound /> : null}
+            <FooterCep />
+        </div>
+    )
+}
