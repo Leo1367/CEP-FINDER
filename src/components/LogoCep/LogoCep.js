@@ -2,7 +2,6 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import styles from '../../styles/App.module.css';
 import style from './LogoCep.module.css';
 
-
 export default function LogoCep() {
   return (
     <div className={styles.container}>

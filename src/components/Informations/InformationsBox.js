@@ -1,5 +1,5 @@
 import styles from '../../styles/App.module.css';
-import style from './InformationsCard.module.css';
+import style from './Informations.module.css';
 
 
 export default function InforBox({ children }) {

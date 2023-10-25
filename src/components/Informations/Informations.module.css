@@ -1,0 +1,45 @@
+.infoBox {
+
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.infoCard {
+
+    width: 100%;
+    margin: 0 1.5rem;
+}
+
+.infoCard h4 {
+
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.infoCard p {
+
+    font-weight: 100;
+    font-size: 20px;
+}
+
+.infoCard hr {
+
+    border: 0;
+    height: 1px;
+    background: radial-gradient(50% 50% at 50% 50%, #D24074 0%, #6518B4 100%);
+}
+
+@media (max-width: 768px) {
+    .infoBox {
+        display: flex;
+        flex-direction: column; 
+        text-align: center; 
+        margin: 2rem 0;
+    }
+
+    .infoCard {
+        margin: 1rem 0; 
+        
+    }
+}

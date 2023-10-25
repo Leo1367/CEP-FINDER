@@ -5,9 +5,11 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { CepContext } from '../../context/SearchInfo';
+import { ErrorContext } from "../../context/CepError";
 
 export default function SearchCep() {
     const { cep, setCep } = useContext(CepContext);
+    const { updateErrorMessage } = useContext(ErrorContext);
     const navigate = useNavigate();
 
     const handleCepChange = (e) => {
@@ -22,9 +24,11 @@ export default function SearchCep() {
             const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
             const responseData = response.data;
 
+            updateErrorMessage("CEP NÃO\n ENCONTRADO")
             navigate('/result', { state: { props: responseData } });
         } catch (error) {
-            console.error('Erro ao encontrar o CEP: ', error);
+            console.log('Erro ao encontrar o CEP: ', error);
+            updateErrorMessage("CEP INVÁLIDO \nVERIFIQUE O CEP DIGITADO")
         }
     };
 

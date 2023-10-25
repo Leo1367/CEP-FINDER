@@ -1,4 +1,4 @@
-import styles from './InformationsCard.module.css';
+import styles from './Informations.module.css';
 
 export default function InformationCard({ icons, result, title }) {
     return (
