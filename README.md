@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# CEP FINDER - Documentação
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Funcionalidades
 
-## Available Scripts
+### Busca Rápida:
 
-In the project directory, you can run:
+O CEP FINDER permite que os usuários realizem buscas rápidas de endereços a partir de um CEP válido. Basta inserir o CEP desejado na interface para obter informações detalhadas do endereço associado.
 
-### `npm start`
+### Resultado da busca:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Após realizar uma busca, o CEP FINDER exibirá de forma clara e organizada os detalhes do endereço, incluindo logradouro, bairro, cidade, estado e outras informações relevantes. O resultado da busca é apresentado ao usuário para fácil visualização.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Navegação Intuitiva:
 
-### `npm test`
+A interface do CEP FINDER foi projetada para proporcionar uma navegação intuitiva. Os usuários podem inserir um CEP, obter os resultados da busca e receber feedback sobre a validade do CEP de maneira simples e amigável.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Consumo da API do ViaCep
 
-### `npm run build`
+O CEP FINDER consome a API ViaCep para obter informações de endereços com base nos CEPs fornecidos pelos usuários. Abaixo, detalhamos as principais informações relacionadas à integração com a API ViaCep.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Endpoints Utilizados:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Endpoint de Busca de CEP:**
+  - URL: `https://viacep.com.br/ws/{CEP}/json/`
+  - Descrição: Este endpoint é utilizado para buscar informações de um CEP específico, onde `{CEP}` deve ser substituído pelo CEP desejado.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Tratamento de Respostas:
 
-### `npm run eject`
+As respostas da API ViaCep são tratadas pela aplicação para extrair informações relevantes. As informações são então apresentadas na interface do CEP FINDER de forma organizada, incluindo detalhes do endereço como logradouro, bairro, cidade, estado, etc.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Rate Limiting:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+É importante observar que a API ViaCep pode ter limitações de taxa (rate limiting) para evitar abusos. Certifique-se de que a aplicação lida adequadamente com essas limitações, fornecendo feedback ao usuário quando necessário.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Considerações Finais
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+O CEP FINDER oferece uma maneira fácil e eficiente de acessar informações detalhadas de endereços a partir de CEPs. A integração com a API ViaCep garante a precisão e atualização dos dados. Certifique-se de que a aplicação seja responsiva, amigável ao usuário e forneça feedback claro em casos de CEP inválido. Boas buscas de CEP!
