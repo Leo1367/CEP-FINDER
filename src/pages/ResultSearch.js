@@ -11,7 +11,7 @@ export default function ResultSearch() {
     const cepData = location.state?.props;
 
     return (
-        <>
+        < >
             <HeaderCep />
             <SearchCep />
             {cepData && cepData.erro ? (
@@ -20,6 +20,6 @@ export default function ResultSearch() {
                 <Informations {...cepData} />
             )}
             <FooterCep />
-        </>
+        </ >
     );
 }

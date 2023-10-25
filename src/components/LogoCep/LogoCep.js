@@ -8,7 +8,7 @@ export default function LogoCep() {
     <div className={styles.container}>
       <div className={style.heroLogo}>
         <FaMapMarkerAlt color="#00D2DF" className={style.heroIcon} />
-        <strong>CEP<br /> <span>FINDER</span></strong>
+        <strong>CEP<br /> <span style={{ color: "#873EFF" }}>FINDER</span></strong>
       </div>
     </div>
   )

@@ -1,12 +1,11 @@
 .notfound {
-
+    
     color: #ffffff;
     font-size: 32px;
     display: flex;
-    position: relative;
     justify-content: center;
-    text-align: center;
     align-items: center;
-    margin: 2rem 0;
     height: 45vh;
+    margin: 2rem 0;
+    text-align: center;
 }

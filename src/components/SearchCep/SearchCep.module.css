@@ -1,10 +1,7 @@
 .searchBox {
 
     display: flex;
-    position: relative;
-    margin: 2rem 0;
-    padding: 20px 45px;
-    width: 100%;
+    padding: 15px 20px;
     border-radius: 15px;
     align-items: center;
     background-color: #161B22;
@@ -12,7 +9,7 @@
 
 .searchTerm {
 
-    width: 100%;
+    flex: 1;
     border: 3px solid #873EFF;
     border-radius: 7px;
     border-right: none;
@@ -38,8 +35,22 @@
     border-radius: 7px;
     color: #FFFFFF;
     cursor: pointer;
-    text-align: center;
     font-size: 20px;
     padding: 15px 46px;
     right: 10px;
+}
+
+@media (max-width: 768px) {
+    .searchBox {
+        padding: 10px 20px;
+        margin: 1rem 0;
+    }
+
+    .searchTerm {
+        font-size: 16px;
+    }
+
+    .searchButton {
+        font-size: 16px;
+    }
 }

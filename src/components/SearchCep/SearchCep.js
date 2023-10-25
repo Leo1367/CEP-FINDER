@@ -1,14 +1,15 @@
 import { FaSearch } from "react-icons/fa";
 import styles from '../../styles/App.module.css';
 import style from './SearchCep.module.css';
-import React, { useState } from 'react';
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { CepContext } from '../../context/SearchInfo';
 
 export default function SearchCep() {
-    const [cep, setCep] = useState('');
-    const navigate = useNavigate(); 
-    
+    const { cep, setCep } = useContext(CepContext);
+    const navigate = useNavigate();
+
     const handleCepChange = (e) => {
         let inputValue = e.target.value;
         inputValue = inputValue.replace(/[^\d]/g, '');
@@ -18,20 +19,19 @@ export default function SearchCep() {
 
     const fetchCepInfo = async () => {
         try {
-          const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
-          const responseData = response.data;
+            const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+            const responseData = response.data;
 
-          navigate('/result', { state: { props: responseData } });
+            navigate('/result', { state: { props: responseData } });
         } catch (error) {
-          console.error('Erro ao encontrar o CEP: ', error);
-          
+            console.error('Erro ao encontrar o CEP: ', error);
         }
-      };
-    
-      const handleSubmit = (e) => {
+    };
+
+    const handleSubmit = (e) => {
         e.preventDefault();
         fetchCepInfo();
-      };
+    };
 
     return (
         <main className={styles.container}>
@@ -52,7 +52,7 @@ export default function SearchCep() {
                 </form>
             </div>
         </main>
-    )
+    );
 }
 
 /* 
