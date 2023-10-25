@@ -6,7 +6,7 @@ import { CepContext } from "../../context/SearchInfo";
 import { useContext } from "react";
 
 export default function HeaderCep() {
-    const { cep, setCep } = useContext(CepContext);
+    const { setCep } = useContext(CepContext);
     const navigate = useNavigate();
 
     const navigateToHomePage = () => {
