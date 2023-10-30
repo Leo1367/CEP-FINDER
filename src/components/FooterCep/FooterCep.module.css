@@ -1,7 +1,7 @@
 .footerCep {
     
     position: fixed;
-    bottom: 0;
+    bottom: 3rem;
     left: 0; 
     right: 0; 
     display: flex;
