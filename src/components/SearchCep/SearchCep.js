@@ -23,13 +23,13 @@ export default function SearchCep() {
             const responseData = response.data;
 
             if (responseData.erro) {
-                navigate('/result', { state: { error: 'CEP NÃO ENCONTRADO' } });
+                navigate('/result', { state: { error: 'CEP NÃO \nENCONTRADO' } });
             } else {
                 navigate('/result', { state: { props: responseData } });
             }
         } catch (error) {
             console.log('Erro ao encontrar o CEP: ', error);
-            navigate('/result', { state: { error: 'CEP INVÁLIDO - VERIFIQUE O CEP DIGITADO' } });
+            navigate('/result', { state: { error: 'CEP INVÁLIDO \n VERIFIQUE O CEP DIGITADO' } });
         }
     };
 

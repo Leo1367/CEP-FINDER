@@ -1,5 +1,5 @@
-import InformationCard from "./InformationCard";
-import InforBox from "./InformationsBox";
+import InformationCard from "../informationsCard/InformationCard";
+import InforBox from "../InformationsBox/InformationsBox";
 import NotFoundPage from "../NotFound/NotFound";
 
 import { FaMapMarkerAlt, FaMapSigns, FaHotel, FaPhone } from "react-icons/fa";
@@ -12,10 +12,9 @@ export default function Informations(props) {
     return (
         <main>
             {error ? (
-                
+
                 <div className="error-message">
                     <NotFoundPage error={error} />
-                    <p>{error}</p>
                 </div>
             ) : (
                 <>
