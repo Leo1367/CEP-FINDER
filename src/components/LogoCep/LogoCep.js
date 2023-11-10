@@ -1,14 +1,12 @@
-import { FaMapMarkerAlt } from "react-icons/fa";
-import styles from '../../styles/App.module.css';
-import style from './LogoCep.module.css';
+import { Icon, LogoContainer, LogoText } from "./LogoCepStyles";
 
 export default function LogoCep() {
   return (
-    <div className={styles.container}>
-      <div className={style.heroLogo}>
-        <FaMapMarkerAlt color="#00D2DF" className={style.heroIcon} />
-        <strong>CEP<br /> <span style={{ color: "#873EFF" }}>FINDER</span></strong>
-      </div>
-    </div>
+    <LogoContainer>
+      <LogoText>
+        <Icon color="#00D2DF" />
+        CEP<br /> <span style={{ color: "#873EFF" }}>FINDER</span>
+      </LogoText>
+    </LogoContainer>
   )
 }

@@ -1,19 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import ResultSearch from './pages/ResultSearch';
 import SearchInfo from './context/SearchInfo';
+import { defaultTheme } from './styles/themes/default';
+import { GlobalStyle } from './styles/GlobalStyled';
+import { ThemeProvider } from 'styled-components';
+import { CepRouter } from './Router.js';
 
 
 export default function App() {
     return (
-        <Router>
+        <ThemeProvider theme={defaultTheme}>
                 <SearchInfo>
-                    <Routes>
-                        <Route path="/" element={<HomePage />} />
-                        <Route path="/result" element={<ResultSearch />} />
-                    </Routes>
+                        <CepRouter />
                 </SearchInfo>
-        </Router>
+            <GlobalStyle />
+        </ThemeProvider>
     );
 }

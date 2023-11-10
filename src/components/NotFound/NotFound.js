@@ -1,13 +1,10 @@
-import styles from '../../styles/App.module.css';
-import style from './NotFound.module.css';
+import { NotFoundContainer } from './NotFoundStyles';
 
 export default function NotFoundPage({ error }) {
 
   return (
-    <div className={styles.container}>
-      <div className={style.notfound}>
-        <strong>{error}</strong>
-      </div>
-    </div>
+    <NotFoundContainer>
+      <strong>{error}</strong>
+    </NotFoundContainer>
   )
 }

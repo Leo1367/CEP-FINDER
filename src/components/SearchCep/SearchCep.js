@@ -1,10 +1,9 @@
-import { FaSearch } from "react-icons/fa";
-import styles from '../../styles/App.module.css';
 import style from './SearchCep.module.css';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { CepContext } from '../../context/SearchInfo';
+import { SearchButton, SearchForm, SearchIcon, SearchInput, SearchInputContainer } from "./SearchCepStyles";
 
 export default function SearchCep() {
     const { cep, setCep } = useContext(CepContext);
@@ -39,23 +38,21 @@ export default function SearchCep() {
     };
 
     return (
-        <main className={styles.container}>
-            <div>
-                <form className={style.searchBox} onSubmit={handleSubmit}>
-                    <FaSearch color="#989898" className={style.searchIcon} />
-                    <input
-                        type="text"
-                        placeholder="Informe o CEP aqui"
-                        className={style.searchTerm}
-                        value={cep}
-                        onChange={handleCepChange}
-                        maxLength="9"
-                    />
-                    <button type="submit" className={style.searchButton}>
-                        Buscar
-                    </button>
-                </form>
-            </div>
-        </main>
+        <SearchInputContainer>
+            <SearchForm onSubmit={handleSubmit}>
+                <SearchIcon />
+                <SearchInput
+                    type="text"
+                    placeholder="Informe o CEP aqui"
+                    className={style.searchTerm}
+                    value={cep}
+                    onChange={handleCepChange}
+                    maxLength="9"
+                />
+                <SearchButton type="submit" >
+                    Buscar
+                </SearchButton>
+            </SearchForm>
+        </SearchInputContainer>
     );
 }

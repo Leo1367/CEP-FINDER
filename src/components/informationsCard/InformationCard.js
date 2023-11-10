@@ -1,18 +1,18 @@
-import styles from './InformationsCard.module.css';
+import { InfoCardContainer, InfoDivider, InfoText, InfoTitle } from './InformationCardStyles';
 
 export default function InformationCard({ icons, result, title }) {
     return (
         <>
             {icons}
-            < div className={styles.infoCard} >
-                <h4>
+            < InfoCardContainer >
+                <InfoTitle>
                     {title}
-                </h4>
-                <p>
+                </InfoTitle>
+                <InfoText>
                     {result}
-                </p>
-                <hr />
-            </div >
+                </InfoText>
+                <InfoDivider />
+            </InfoCardContainer >
         </>
     );
 }
