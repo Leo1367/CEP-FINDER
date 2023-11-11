@@ -22,5 +22,5 @@ export const InfoText = styled.p`
 export const InfoDivider = styled.hr`
   border: 0;
   height: 1px;
-  background: radial-gradient(50% 50% at 50% 50%, #D24074 0%, #6518B4 100%);
+  background: ${props => props.theme.gradient};
 `;

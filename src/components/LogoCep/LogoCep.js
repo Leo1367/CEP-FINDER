@@ -1,12 +1,14 @@
-import { Icon, LogoContainer, LogoText } from "./LogoCepStyles";
+import { Icon, LogoText, SpanCep } from "./LogoCepStyles";
 
 export default function LogoCep() {
   return (
-    <LogoContainer>
+    <>
       <LogoText>
-        <Icon color="#00D2DF" />
-        CEP<br /> <span style={{ color: "#873EFF" }}>FINDER</span>
+        <Icon />
+        <p>
+          CEP<br /> <SpanCep>FINDER</SpanCep>
+        </p>
       </LogoText>
-    </LogoContainer>
+    </>
   )
 }

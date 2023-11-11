@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const InfoBox = styled.div`
-color: #ffffff;
+color: ${props => props.theme.white};
 display: flex;
 align-items: center;
 

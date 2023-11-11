@@ -1,13 +1,12 @@
-import { FaRegCopyright } from "react-icons/fa";
-import { CopyrightText, FooterContainer } from "./FooterStyles";
+import { FooterContainer, IconFooter } from "./FooterStyles";
 
 
 export default function FooterCep() {
   return (
     <FooterContainer>
-      <CopyrightText>
-        <FaRegCopyright color="#FFFFFF" /> 2023 - Leonardo e Edilando
-      </CopyrightText>
+      <p>
+        <IconFooter /> 2023 - Leonardo e Edilando
+      </p>
     </FooterContainer>
   )
 }

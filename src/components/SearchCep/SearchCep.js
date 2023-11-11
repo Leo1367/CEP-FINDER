@@ -1,9 +1,8 @@
-import style from './SearchCep.module.css';
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { CepContext } from '../../context/SearchInfo';
-import { SearchButton, SearchForm, SearchIcon, SearchInput, SearchInputContainer } from "./SearchCepStyles";
+import { SearchButton, SearchForm, SearchIcon, SearchInput } from "./SearchCepStyles";
+import { fechInfos } from "../../utils";
 
 export default function SearchCep() {
     const { cep, setCep } = useContext(CepContext);
@@ -16,9 +15,10 @@ export default function SearchCep() {
         setCep(inputValue);
     };
 
+    
     const fetchCepInfo = async () => {
         try {
-            const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+            const response = await fechInfos(cep);
             const responseData = response.data;
 
             if (responseData.erro) {
@@ -38,21 +38,20 @@ export default function SearchCep() {
     };
 
     return (
-        <SearchInputContainer>
+        <>
             <SearchForm onSubmit={handleSubmit}>
                 <SearchIcon />
                 <SearchInput
                     type="text"
                     placeholder="Informe o CEP aqui"
-                    className={style.searchTerm}
                     value={cep}
                     onChange={handleCepChange}
                     maxLength="9"
                 />
-                <SearchButton type="submit" >
+                <SearchButton type="submit">
                     Buscar
                 </SearchButton>
             </SearchForm>
-        </SearchInputContainer>
+        </>
     );
 }
